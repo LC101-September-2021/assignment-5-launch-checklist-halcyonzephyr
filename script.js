@@ -10,6 +10,26 @@ window.addEventListener("load", function() {
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        if (
+            validateInput(pilot.value) === "Empty" ||
+            validateInput(copilot.value) === "Empty" ||
+            validateInput(fuelLevel.value) === "Empty" ||
+            validateInput(cargoLevel.value) === "Empty"
+          ) {
+            list.style.visibility = "hidden";
+            alert("All fields are required!");
+          } else if (
+            validateInput(pilot.value) !== "Not a Number" ||
+            validateInput(copilot.value) !== "Not a Number" || 
+            validateInput(fuelLevel.value) !== "Is a Number" ||
+            validateInput(cargoLevel.value) !== "Is a Number"
+            
+          ) {
+            list.style.visibility = "hidden";
+            alert("Make sure to enter valid information for each field!");
+          } 
+        
         formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
     });  
 
