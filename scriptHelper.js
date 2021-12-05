@@ -44,14 +44,19 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
       validateInput(cargoLevel.value)
     ) === "Empty" 
   ) {
-    list.style.visibility = "hidden";
+
     alert("All fields are required!");
     } else if (
-    (validateInput(pilot.value) || validateInput(copilot.value)) !== "Not a Number" 
-    ||
-    (validateInput(fuelLevel.value) || validateInput(cargoLevel.value)) !== "Is a Number"
+      (
+        validateInput(pilot.value) || 
+      validateInput(copilot.value)
+      ) !== "Not a Number" 
+      ||
+      (
+        validateInput(fuelLevel.value) || 
+        validateInput(cargoLevel.value)
+      ) !== "Is a Number"
     ) {
-    list.style.visibility = "hidden";
     alert("Make sure to enter valid information for each field!");
     } else {
     list.style.visibility = "visible";
