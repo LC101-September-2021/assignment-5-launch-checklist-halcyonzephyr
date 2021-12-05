@@ -45,7 +45,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     ) === "Empty" 
   ) {
 
-    alert("All fields are required!");
+    window.alert("All fields are required!");
     } else if (
       (
         validateInput(pilot.value) || 
@@ -57,7 +57,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         validateInput(cargoLevel.value)
       ) !== "Is a Number"
     ) {
-    alert("Make sure to enter valid information for each field!");
+    window.alert("Make sure to enter valid information for each field!");
     } else {
     list.style.visibility = "visible";
     pilotStatus.textContent = `Pilot ${pilot.value} is ready for launch`;
