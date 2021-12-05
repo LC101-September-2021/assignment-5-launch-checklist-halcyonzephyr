@@ -8,13 +8,13 @@ window.addEventListener("load", function() {
     let cargoMass = document.querySelector("input[name=cargoMass]");
     let list = document.querySelector("#faultyItems");
 
-    // for test GRADING DOM MANIPULATION TEST:  Launch CheckList is ready to go Launch CheckList is ready to go
+    // for test GRADING DOM MANIPULATION TEST:  Launch CheckList is ready to go
     list.style.visibility = "hidden";
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
+        formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
     });  
 
     let listedPlanets;
@@ -26,18 +26,18 @@ window.addEventListener("load", function() {
     }).then(function () {
         console.log(listedPlanets);
 
-        let randomPlanet = pickPlanet(listedPlanets);
+        let studentPlanet = pickPlanet(listedPlanets);
 
-        console.log(`the random planet picked is ${randomPlanet}.`)
+        console.log(`the random planet picked is ${studentPlanet}.`)
 
         addDestinationInfo(
             document,
-            listedPlanets[randomPlanet].name,
-            listedPlanets[randomPlanet].diameter,
-            listedPlanets[randomPlanet].star,
-            listedPlanets[randomPlanet].distance,
-            listedPlanets[randomPlanet].moons,
-            listedPlanets[randomPlanet].image
+            listedPlanets[studentPlanet].name,
+            listedPlanets[studentPlanet].diameter,
+            listedPlanets[studentPlanet].star,
+            listedPlanets[studentPlanet].distance,
+            listedPlanets[studentPlanet].moons,
+            listedPlanets[studentPlanet].image
         );
     })
 
