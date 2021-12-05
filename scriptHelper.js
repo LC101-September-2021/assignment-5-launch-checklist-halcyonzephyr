@@ -13,7 +13,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
       <li>Distance from Earth: ${distance}</li>
       <li>Number of Moons: ${moons}</li>
     </ol>
-    <img src="${imageUrl}" alt="${name}" />
+    <img src="${imageUrl}">
   `;
 }
 
@@ -52,11 +52,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     alert("Make sure to enter valid information for each field!");
   } else {
     list.style.visibility = "visible";
-    pilotStatus.textContent = `Pilot ${pilot.value} is ready for launch.`;
-    copilotStatus.textContent = `Co-pilot ${copilot.value} is ready for launch.`;
+    pilotStatus.textContent = `Pilot ${pilot.value} is ready for launch`;
+    copilotStatus.textContent = `Co-pilot ${copilot.value} is ready for launch`;
 
     if (fuelLevel.value < 10000) {
-      fuelStatus.textContent = "There is not enough fuel for the journey.";
+      fuelStatus.textContent = "Fuel level too low for launch";
       readyStatus = false;
     } else {
       fuelStatus.textContent = "Fuel level high enough for launch";
@@ -64,7 +64,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     if (cargoLevel.value > 10000) {
-      cargoStatus.textContent = "There is too much mass for the shuttle to take off.";
+      cargoStatus.textContent = "Cargo mass too heavy for launch";
       readyStatus = false;
     } else {
       cargoStatus.textContent = "Cargo mass low enough for launch";
@@ -72,11 +72,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     if (readyStatus) {
-      launchStatus.style.color = "green";
-      launchStatus.textContent = "Shuttle is ready for launch";
+      launchStatus.style.color = "rgb(65, 159, 106)";
+      launchStatus.textContent = "Shuttle is Ready for Launch";
     } else {
-      launchStatus.style.color = "red";
-      launchStatus.textContent = "Shuttle not ready for launch";
+      launchStatus.style.color = "rgb(199, 37, 78)";
+      launchStatus.textContent = "Shuttle Not Ready for Launch";
     }
   }
 }
