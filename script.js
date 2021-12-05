@@ -28,7 +28,7 @@ window.addEventListener("load", function() {
 
         let studentPlanet = pickPlanet(listedPlanets);
 
-        console.log(`the random planet picked is ${studentPlanet}.`)
+        console.log(`the random planet picked is ${listedPlanets[studentPlanet].name}.`)
 
         addDestinationInfo(
             document,
