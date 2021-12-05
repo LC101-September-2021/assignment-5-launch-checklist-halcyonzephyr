@@ -41,6 +41,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(fuelLevel.value) === "Empty" ||
     validateInput(cargoLevel.value) === "Empty"
   ) {
+    list.style.visibility = "hidden";
     alert("All fields are required!");
   } else if (
     validateInput(pilot.value) !== "Not a Number" ||
@@ -49,6 +50,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(cargoLevel.value) !== "Is a Number"
     
   ) {
+    list.style.visibility = "hidden";
     alert("Make sure to enter valid information for each field!");
   } else {
     list.style.visibility = "visible";
