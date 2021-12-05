@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
+        formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
     });  
 
     let listedPlanets;
