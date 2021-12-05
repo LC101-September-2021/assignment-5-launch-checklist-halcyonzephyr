@@ -28,35 +28,35 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-  
+
   // trying to beat the auto-grader
   list.style.visibility = "hidden";
 
-  let readyStatus = null;
+  let readyStatus = true;
   let pilotStatus = document.getElementById("pilotStatus");
   let copilotStatus = document.getElementById("copilotStatus");
   let fuelStatus = document.getElementById("fuelStatus");
   let cargoStatus = document.getElementById("cargoStatus");
   let launchStatus = document.getElementById("launchStatus");
 
-      if (
-    validateInput(pilot.value) === "Empty" ||
-    validateInput(copilot.value) === "Empty" ||
-    validateInput(fuelLevel.value) === "Empty" ||
-    validateInput(cargoLevel.value) === "Empty"
+  if (
+    (
+      validateInput(pilot.value) || 
+      validateInput(copilot.value) || 
+      validateInput(fuelLevel.value) || 
+      validateInput(cargoLevel.value)
+    ) === "Empty" 
   ) {
     list.style.visibility = "hidden";
     alert("All fields are required!");
-  } else if (
-    validateInput(pilot.value) !== "Not a Number" ||
-    validateInput(copilot.value) !== "Not a Number" || 
-    validateInput(fuelLevel.value) !== "Is a Number" ||
-    validateInput(cargoLevel.value) !== "Is a Number"
-    
-  ) {
+    } else if (
+    (validateInput(pilot.value) || validateInput(copilot.value)) !== "Not a Number" 
+    ||
+    (validateInput(fuelLevel.value) || validateInput(cargoLevel.value)) !== "Is a Number"
+    ) {
     list.style.visibility = "hidden";
     alert("Make sure to enter valid information for each field!");
-  } else {
+    } else {
     list.style.visibility = "visible";
     pilotStatus.textContent = `Pilot ${pilot.value} is ready for launch`;
     copilotStatus.textContent = `Co-pilot ${copilot.value} is ready for launch`;
@@ -64,9 +64,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (fuelLevel.value < 10000) {
       fuelStatus.textContent = "Fuel level too low for launch";
       readyStatus = false;
+      console.log(`readyStatus is ${readyStatus}`)
     } else {
       fuelStatus.textContent = "Fuel level high enough for launch";
-      readyStatus = true;
     }
 
     if (cargoLevel.value > 10000) {
@@ -74,7 +74,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
       readyStatus = false;
     } else {
       cargoStatus.textContent = "Cargo mass low enough for launch";
-      readyStatus = true;
     }
 
     if (readyStatus) {
