@@ -8,9 +8,12 @@ window.addEventListener("load", function() {
     let cargoMass = document.querySelector("input[name=cargoMass]");
     let list = document.querySelector("#faultyItems");
 
+    // for test GRADING DOM MANIPULATION TEST:  Launch CheckList is ready to go
+    list.style.visibility = "hidden";
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        
+
         formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
     });  
 

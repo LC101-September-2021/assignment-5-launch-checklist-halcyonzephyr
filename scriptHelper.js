@@ -29,9 +29,6 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
-  // trying to beat the auto-grader
-  list.style.visibility = "hidden";
-
   let readyStatus = true;
   let pilotStatus = document.getElementById("pilotStatus");
   let copilotStatus = document.getElementById("copilotStatus");
