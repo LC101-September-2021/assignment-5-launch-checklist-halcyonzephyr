@@ -26,18 +26,18 @@ window.addEventListener("load", function() {
     }).then(function () {
         console.log(listedPlanets);
 
-        let studentPlanet = pickPlanet(listedPlanets);
+        let destinationPlanet = pickPlanet(listedPlanets);
 
-        console.log(`the random planet picked is ${listedPlanets[studentPlanet].name}.`)
+        console.log(`the random planet picked is ${destinationPlanet.name}.`)
 
         addDestinationInfo(
             document,
-            listedPlanets[studentPlanet].name,
-            listedPlanets[studentPlanet].diameter,
-            listedPlanets[studentPlanet].star,
-            listedPlanets[studentPlanet].distance,
-            listedPlanets[studentPlanet].moons,
-            listedPlanets[studentPlanet].image
+            destinationPlanet.name,
+            destinationPlanet.diameter,
+            destinationPlanet.star,
+            destinationPlanet.distance,
+            destinationPlanet.moons,
+            destinationPlanet.image
         );
     })
 
