@@ -44,12 +44,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
       validateInput(cargoLevel.value)
     ) === "Empty" 
   ) {
-
     window.alert("All fields are required!");
     } else if (
       (
         validateInput(pilot.value) || 
-      validateInput(copilot.value)
+        validateInput(copilot.value)
       ) !== "Not a Number" 
       ||
       (
@@ -86,7 +85,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
       launchStatus.textContent = "Shuttle Not Ready for Launch";
     }
   }
-  
     
 }
 
